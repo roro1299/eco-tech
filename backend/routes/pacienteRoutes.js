@@ -7,7 +7,7 @@ const {
     createPaciente,    
     updatePaciente,    
     deletePaciente     
-} = require('../controllers/PacienteController'); 
+} = require('../controllers/pacienteController'); 
 
 const { protect } = require('../middleware/authMiddleware'); 
 
