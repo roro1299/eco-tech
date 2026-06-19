@@ -19,7 +19,7 @@
     app.use(express.urlencoded({ extended: false })); 
 
     
-    const PacienteRoutes = require('./routes/PacienteRoutes'); 
+    const PacienteRoutes = require('./routes/pacienteRoutes'); 
     const citaRoutes = require('./routes/citaRoutes');
     const userRoutes = require('./routes/userRoutes');
 
