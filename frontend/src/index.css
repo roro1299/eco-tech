@@ -1,0 +1,762 @@
+/* frontend/src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
+:root {
+  /* Colores Base de la Paleta (Sky Blue / Beige) */
+  --color-primary: #C8D9E6;      /* Celeste Pastel - es el fondo */
+  --color-secondary: #008DDA;    
+  --color-accent: #008DDA;       /* Azul Brillante - es el color secundario del header */
+  --color-background-alt: #F5EFEB; /* Beige Pálido (Fondo principal de la página) */
+  --color-light: #FFFFFF;        /* Blanco Puro (Fondo de Cards) */
+  --color-dark: #333333;         /* Gris oscuro */
+  --text-color-light: var(--color-light);      /* Texto blanco */
+  --text-color-dark: var(--color-dark);  /* Texto principal un gris */
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  background-color: #FFFFFF; /* fondo que no se ve */
+  color: var(--text-color-dark);
+}
+
+.main-header {
+  background-color: #ffffff; /* Header principal del menu */
+  color: var(--text-color-light);
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px; 
+  margin: 0 auto;
+  font-weight: bold; 
+}
+
+.logo a {
+  color: var(--text-color-light);
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 700; 
+}
+
+.logo-img { 
+  height: 65px; 
+  width: auto; /* Ancho automático para mantener la proporción */
+  margin-right: 10px; 
+  vertical-align: middle; 
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none; 
+}
+
+.main-nav ul li {
+  margin-left: 25px;
+}
+
+.main-nav ul li a {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 400; /* Regular */
+  transition: color 0.3s ease; /* Transición suave al pasar el mouse */
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a.active { /* Para cuando una página esté activa */
+  color: var(--color-dark); /* color al pasar mouse sobre letras del header */
+}
+
+.contact-button .btn-agendar {
+  background-color: var(--color-accent);
+  color: #ffffff; 
+  padding: 0.7rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600; /* Semi-bold */
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+  margin-left: 20px;
+}
+
+.contact-button .btn-agendar:hover {
+  background-color: var(--color-dark); /* Un tono un poco más oscuro al pasar el mouse */
+}
+
+
+.main-content {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 20px auto;
+  background-color: var(--color-secondary);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  background-color: var(--color-dark);
+  color: var(--text-color-light);
+  padding: 1.5rem;
+  text-align: center;
+  margin-top: 50px; 
+}
+
+
+
+
+
+
+/* Estilos para la sección Hero */
+.hero-section {
+  background: var(--color-light);
+  color: var(--text-color-dark);
+  text-align: center;
+  padding: 100px 20px; /* Espaciado superior e inferior */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px; /* Altura mínima para que sea visible */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 1.15rem;
+  margin-bottom: 30px;
+  font-weight: 500;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--text-color-dark);
+}
+
+.hero-buttons .btn {
+  display: inline-block;
+  padding: 15px 30px;
+  margin: 0 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 1.1rem;
+}
+
+.hero-buttons .btn-primary {
+  background-color: var(--color-accent); 
+  color: var(--color-dark);
+  border: 2px solid var(--color-accent);
+}
+
+.hero-buttons .btn-primary:hover {
+  background-color: #ffffff; /* Tono más oscuro del acento */
+  transform: translateY(-2px);
+}
+
+.hero-buttons .btn-secondary {
+  background-color: transparent;
+  color: var(--color-dark);
+  border: 2px solid var(--color-dark);
+}
+
+.hero-buttons .btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+
+.main-content {
+  padding: 0; 
+  max-width: 100%; 
+  margin: 0; /* Quitamos el margen para que no haya espacios blancos a los lados */
+  background-color: transparent; /* Quitamos el fondo blanco */
+  box-shadow: none; /* Quitamos la sombra */
+  padding-top: 100px;
+}
+
+
+
+
+
+/* Estilos para la sección de Servicios */
+.services-section {
+  padding: 80px 20px;
+  background-color: var(--color-light); /* Fondo claro para contrastar con el hero */
+  text-align: center;
+}
+
+.services-section h2 {
+  font-size: 2.8rem;
+  color: var(--color-accent);
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.services-section .subtitle {
+  font-size: 1.2rem;
+  color: var(--text-color-dark);
+  margin-bottom: 60px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Columnas responsivas */
+  gap: 30px; /* Espacio entre las tarjetas */
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.service-card {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-card:hover {
+  transform: translateY(-10px); /* Efecto de elevación al pasar el mouse */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon {
+  font-size: 3.5rem;
+  color: var(--color-dark); /* Color dorado para los iconos */
+  margin-bottom: 20px;
+}
+
+.service-card h3 {
+  font-size: 1.8rem;
+  color: var(--color-dark); /* Titulo de los boxes */
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: var(--text-color-dark); /* parafo de los boxes */
+  line-height: 1.7;
+}
+
+
+
+
+/* Contenedor general para centrar contenido en secciones */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.main-service-callout{
+  padding: 40px;
+  background-color: var(--color-primary);
+  color: var(--color-dark);
+  border-radius: 12px;
+  text-align: center;
+  margin: 40px auto;
+  max-width: 800px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+}
+
+.main-service-callout h2{
+  color: var(--color-dark);
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-family: 'playfair Display', serif;
+}
+
+.main-service-callout p{
+  color: var(--color-dark);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+
+/* Estilos para la sección Quiénes Somos */
+.about-section {
+  padding: 80px 20px;
+  background-color: #ffffff; /* Fondo blanco */
+  text-align: left;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column; /* Por defecto, para móviles: la imagen debajo del texto */
+  align-items: center;
+  gap: 50px; /* Espacio entre el texto y la imagen */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) { 
+  .about-content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.about-text {
+  flex: 1; /* Permite que el texto ocupe el espacio disponible */
+}
+
+.about-text h2 {
+  font-size: 2.8rem;
+  color: var(--color-accent); 
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+.about-text p {
+  font-size: 1.05rem;
+  color: var(--text-color-dark);
+  line-height: 1.8;
+  margin-bottom: 20px;
+  max-width: 650px;
+}
+
+.about-text ul {
+  list-style: none; /* Quitamos los puntos de lista predeterminados */
+  margin-bottom: 30px;
+}
+
+.about-text ul li {
+  margin-bottom: 10px;
+  font-size: 1.05rem;
+  color: var(--text-color-dark);
+}
+
+.about-text ul li .fas { /* Estilos para el icono de check */
+  color: var(--color-light); 
+  margin-right: 10px;
+}
+
+.about-image {
+  flex: 1; /* Permite que la imagen ocupe el espacio disponible */
+  text-align: center;
+}
+
+.about-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.btn.btn-primary {
+  background-color: var(--color-accent);
+  color: var(--color-light);
+  padding: 15px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 1.1rem;
+  display: inline-block; /* Para que tome el padding y margen */
+}
+
+.btn.btn-primary:hover {
+  background-color: var(--color-dark);
+  transform: translateY(-2px);
+}
+
+
+
+
+
+
+/* Estilos para la sección de Contacto */
+.contact-section {
+  padding: 80px 20px;
+  background-color: var(--color-light); /* Fondo claro */
+  text-align: center;
+  
+}
+
+.contact-section h2 {
+  font-size: 2.8rem;
+  color: var(--color-accent);
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.contact-section .subtitle {
+  font-size: 1.2rem;
+  color: var(--text-color-dark);
+  margin-bottom: 60px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-content {
+  display: flex;
+  flex-direction: column; 
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: flex-start; 
+}
+
+@media (min-width: 768px) {
+  .contact-content {
+    flex-direction: row; /* En pantallas grandes, uno al lado del otro */
+    justify-content: space-between;
+    align-items: flex-start; /* Mantiene la alineación superior */
+  }
+}
+
+.contact-info {
+  flex: 1;
+  text-align: left; /* Alinea el texto de información a la izquierda */
+  background-color: var(--color-light);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.contact-info h3 {
+  font-size: 2rem;
+  color: var(--color-dark);
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.contact-info p {
+  font-size: 1.1rem;
+  color: var(--text-color-dark);
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.contact-info p .fas, .contact-info p .fab { /* Estilos para los iconos de info */
+  color: var(--color-secondary);
+  margin-right: 15px;
+  font-size: 1.3rem;
+  width: 25px; /* Ancho fijo para alinear iconos */
+  text-align: center;
+}
+
+.contact-info p a {
+  color: var(--text-color-dark);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info p a:hover {
+  color: var(--color-accent);
+}
+
+.contact-map {
+  flex: 1;
+  min-height: 350px; /* Altura mínima para el mapa */
+  background-color: #eee; /* Color de fondo si el iframe no carga */
+  border-radius: 10px;
+  overflow: hidden; /* Asegura que el iframe no se salga de los bordes */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.contact-map iframe {
+  border-radius: 10px;
+}
+
+.btn-whatsapp {
+  display: inline-flex; /* Para alinear el icono y el texto */
+  align-items: center;
+  gap: 10px; /* Espacio entre icono y texto */
+  background-color: var(--color-accent); 
+  color: white;
+  padding: 12px 25px;
+  border-radius: 50px; 
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top: 30px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1DA851; /* Tono más oscuro al pasar el mouse */
+  transform: translateY(-2px);
+}
+
+.btn-whatsapp .fab {
+  font-size: 1.5rem; 
+}
+
+
+
+
+
+
+
+
+
+.appointment-page-section {
+  padding: 80px 20px; /* Espaciado superior e inferior para la página */
+  background-color: var(--color-light); 
+  text-align: center; 
+  min-height: calc(100vh - 120px); 
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centrar contenido verticalmente */
+  align-items: center; /* Centrar contenido horizontalmente */
+}
+
+.appointment-page-section h2 {
+  font-size: 2.8rem;
+  color: var(--color-primary);
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.appointment-page-section .subtitle {
+  font-size: 1.2rem;
+  color: var(--text-color-dark);
+  margin-bottom: 40px; /* Menos margen si no hay mapa */
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.appointment-form-container {
+  max-width: 600px; /* Limita el ancho del formulario */
+  width: 100%; 
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  text-align: left; /* Alinea el texto dentro del formulario */
+  margin-bottom: 40px; 
+}
+
+.appointment-form-container h3 {
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: 25px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.appointment-form .form-group {
+  margin-bottom: 20px;
+}
+
+.appointment-form label {
+  display: block;
+  font-size: 1.1rem;
+  color: var(--text-color-dark);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.appointment-form input[type="text"],
+.appointment-form input[type="email"],
+.appointment-form input[type="tel"],
+.appointment-form input[type="date"],
+.appointment-form input[type="time"],
+.appointment-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: var(--text-color-dark);
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.appointment-form input:focus,
+.appointment-form textarea:focus {
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 0 3px rgba(0, 137, 123, 0.2);
+  outline: none;
+}
+
+.appointment-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.appointment-form button.btn-primary {
+  width: 100%;
+  padding: 15px 20px;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  background-color: var(--color-accent);
+  color: var(--color-light);
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.appointment-form button.btn-primary:hover {
+  background-color: var(--color-dark);
+  transform: translateY(-2px);
+}
+
+.form-message {
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.form-message.success {
+  background-color: #e6ffe6;
+  color: #006600;
+  border: 1px solid #009900;
+}
+
+.form-message.error {
+  background-color: #ffe6e6;
+  color: #cc0000;
+  border: 1px solid #ff0000;
+}
+
+
+/* Esto es Texto de abajo de los servicios */
+.publico-objetivo {
+  margin-top: 80px;
+  padding-top: 40px;
+  border-top: 1px solid var(--color-primary);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.publico-objetivo h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--color-secondary);
+    margin-bottom: 30px;
+}
+
+.objetivo-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas */
+    gap: 15px;
+    font-size: 1.3rem;
+    color: var(--text-color-dark);
+}
+
+.objetivo-list li .fas {
+    color: var(--color-accent); 
+    margin-right: 10px;
+}
+
+.service-icon {
+  font-size: 3.5rem;
+  color: var(--color-accent); 
+  margin-bottom: 20px;
+}
+
+/* Estilo para el contenedor que agrupa Hero, About y Servicios */
+.blue-section-wrapper {
+  background-color: #d1e3ea; /* Un azul grisáceo suave similar al de tu foto */
+  border-radius: 30px;       /* Bordes muy redondeados */
+  padding: 40px;             /* Espacio interno para que el contenido no pegue al borde */
+  margin: 20px auto;         /* Centrado y separado de los lados */
+  max-width: 1200px;         /* Que no se haga infinito en pantallas gigantes */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Una sombra muy suave opcional */
+}
+
+/* Ajuste para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .blue-section-wrapper {
+    padding: 20px;
+    margin: 10px;
+    border-radius: 15px;
+  }
+}
+
+/* --- ESTILOS NUEVOS PARA UNIFICAR SERVICIOS --- */
+
+/* 1. El contenedor GRANDE (Padre) que abraza todo */
+.unified-services-wrapper {
+  background-color: var(--color-primary); /* El fondo azul cielo se mueve aquí */
+  border-radius: 30px;       /* Bordes redondeados */
+  padding: 40px;             /* Espacio interno */
+  margin: 40px auto;         /* Centrado */
+  max-width: 1200px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05); /* Sombra suave */
+}
+
+/* 2. Quitamos el estilo a la caja pequeña (Hijo) para que no se vea doble */
+.main-service-callout {
+  background-color: transparent !important; /* Quita el fondo azul viejo */
+  box-shadow: none !important;              /* Quita la sombra vieja */
+  padding: 0 !important;                    /* Quita el relleno extra */
+  margin: 0 auto 40px auto !important;           /* Solo deja margen abajo */
+  border-radius: 0;
+}
+
+/* 3. Ajuste para celulares */
+@media (max-width: 768px) {
+  .unified-services-wrapper {
+    padding: 20px;       /* Menos espacio en pantallas chicas */
+    border-radius: 20px;
+  }
+}
+
+
+.privacy-link {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.privacy-link:hover{
+    color: rgba(255, 255, 255, 1);
+}

@@ -1,0 +1,41 @@
+/* src/components/WhatsAppBtn.css */
+
+.whatsapp-float {
+  position: fixed; /* Se queda fijo al bajar la página */
+  bottom: 25px;    /* Distancia desde abajo */
+  right: 25px;     /* Distancia desde la derecha */
+  background-color: #008CBA; /* Azul elegante que combina con tu logo */
+  color: #FFF;
+  width: 50px;     /* Tamaño chico */
+  height: 50px;
+  border-radius: 50%; /* Lo hace redondo */
+  text-align: center;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra suave */
+  z-index: 1000;   /* Asegura que esté encima de todo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  
+  /* Aquí está la magia de la animación constante */
+  animation: pulse 2s infinite; 
+}
+
+/* Efecto al pasar el mouse */
+.whatsapp-float:hover {
+  background-color: #005f7f; /* Azul más oscuro al tocar */
+  transform: scale(1.1); /* Crece un poquito */
+}
+
+/* Definición de la animación de "latido" */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 140, 186, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 140, 186, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 140, 186, 0);
+  }
+}
