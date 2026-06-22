@@ -127,7 +127,7 @@ const forgotPassword = asyncHandler(async (req, res) => {
 
     // Crear URL de reseteo (Frontend)
     // Nota: Asumo que tu React corre en el puerto 5173 (Vite) o 3000. Ajusta si es necesario.
-    const resetUrl = `http://localhost:5173/reset-password/${resetToken}`;
+    const resetUrl = `${process.env.FRONTEND_URL}/reset-password/${resetToken}`;
 
     console.log("---------------------------------------------------------");
     console.log("CLICK AQUÍ PARA RESTABLECER (Copiar el link):");
