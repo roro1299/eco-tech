@@ -1,6 +1,7 @@
 // frontend/src/pages/AgendarCitaPage.jsx
 import React, { useState } from 'react';
 import axios from 'axios';
+import { API_URL } from '../config';
 
 const AgendarCitaPage = () => {
   const [formData, setFormData] = useState({
@@ -30,7 +31,7 @@ const AgendarCitaPage = () => {
 
     try {
       // Asegúrate de que esta URL sea la correcta para tu backend
-      const res = await axios.post('http://localhost:5000/api/citas', formData);
+      const res = await axios.post(`${API_URL}/api/citas`, formData);
       setMessage(res.data.msg);
       setIsError(false);
       setFormData({ // Limpiar formulario

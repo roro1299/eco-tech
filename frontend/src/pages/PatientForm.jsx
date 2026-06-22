@@ -2,7 +2,8 @@
     import React, { useState, useEffect } from 'react';
     import { useParams, useNavigate } from 'react-router-dom';
     import axios from 'axios';
-    import { useAuth } from '../context/AuthContext'; 
+    import { useAuth } from '../context/AuthContext';
+    import { API_URL } from '../config'; 
 
     const PatientForm = () => {
         const { id } = useParams(); 
@@ -49,7 +50,7 @@
                 const fetchPatient = async () => {
                     try {
                         setError(null);
-                        const res = await axios.get(`/api/Pacientes/${id}`);
+                        const res = await axios.get(`${API_URL}/api/Pacientes/${id}`);
                         const patientData = res.data;
 
                         // Formatear fecha para el input type="date" (YYYY-MM-DD)
@@ -136,10 +137,10 @@
 
             try {
                 if (isEditing) {
-                    await axios.put(`/api/Pacientes/${id}`, formData);
+                    await axios.post(`${API_URL}/api/Pacientes`, formData);
                     setSuccessMessage('Cliente actualizado con éxito.');
                 } else {
-                    await axios.post('/api/Pacientes', formData);
+                    await axios.post(`${API_URL}/api/Pacientes`, formData);
                     setSuccessMessage('Cliente creado con éxito.');
                     // Limpiar formulario después de crear
                     setFormData({

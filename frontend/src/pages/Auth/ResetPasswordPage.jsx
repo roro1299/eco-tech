@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { API_URL } from '../../config';
 
 const ResetPasswordPage = () => {
     const { token } = useParams(); // Captura el token de la URL
@@ -21,7 +22,7 @@ const ResetPasswordPage = () => {
 
         try {
             // Intenta enviar la nueva contraseña al backend
-            const res = await axios.post(`/api/users/reset-password/${token}`, { password });
+            const res = await axios.post(`${API_URL}/api/users/reset-password/${token}`, { password });
             setMessage('¡Contraseña restablecida con éxito! Redirigiendo...');
             setTimeout(() => navigate('/login'), 3000);
         } catch (err) {

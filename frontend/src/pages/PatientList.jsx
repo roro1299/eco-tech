@@ -3,6 +3,7 @@
     import axios from 'axios';
     import { useAuth } from '../context/AuthContext';
     import { useNavigate } from 'react-router-dom';
+    import { API_URL } from '../config';
 
     const PatientList = () => {
         const { user, isAuthenticated, loading } = useAuth();
@@ -16,7 +17,7 @@
             try {
                 setLoadingPatients(true);
                 setError(null);
-                const res = await axios.get('/api/Pacientes');
+                const res = await axios.get(`${API_URL}/api/Pacientes`);
                 setPatients(res.data);
                 console.log("Clientes cargados:", res.data);
             } catch (err) {
@@ -42,7 +43,7 @@
         const handleDelete = async (id) => {
             if (window.confirm('¿Estás seguro de que quieres eliminar este Cliente? Esta acción es irreversible.')) {
                 try {
-                    await axios.delete(`/api/Pacientes/${id}`);
+                    await axios.delete(`${API_URL}/api/Pacientes/${id}`);
                     setDeleteMessage('Cliente eliminado con éxito.');
                     fetchPatients();
                     setTimeout(() => setDeleteMessage(null), 3000);
