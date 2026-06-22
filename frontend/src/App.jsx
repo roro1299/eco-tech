@@ -39,7 +39,8 @@ function App() {
 
             
             <Route path="/agendar-cita" element={<AgendarCitaPage />} /> 
-            {/* RUTA DE REGISTRO - AHORA PROTEGIDA (SOLO ADMIN) */}
+            
+            {/* RUTA DE REGISTRO - AHORA PROTEGIDA (SOLO ADMIN) 
               <Route
                  path="/register"
                    element={
@@ -48,6 +49,10 @@ function App() {
               </PrivateRoute>
           }
           />
+          */}
+
+          <Route path="/register" element={<RegisterPage />} />
+
             <Route path="/login" element={<LoginPage />} />
             <Route path="/forgot-password" element={<ForgotPasswordPage />} />
             <Route path="/reset-password/:token" element={<ResetPasswordPage />} />
